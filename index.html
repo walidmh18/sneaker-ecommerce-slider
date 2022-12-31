@@ -13,7 +13,7 @@
 </head>
 <body>
    <header>
-      <div><a href="#">FLOAT</a></div>
+      <div><a href="#" class="mainHeaderLogo">FLOAT</a></div>
       <div><ul>
          <li><a href="">woocommerce</a></li>
          <li><a href="">products</a></li>
@@ -27,7 +27,7 @@
          </ul>
       </div>
       <div>
-         <a href="#">cart (<span>0</span>)</a>
+         <button class="cartOpenBtn" onclick="openCart()">cart (<span>0</span>)</button>
       </div>
    </header>
 
@@ -123,7 +123,7 @@
          
             <div class="slideDescription slide1Description">
                <div class="description">
-                  <div class="slidePrice"><h2>$749</h2></div>
+                  <div class="slidePrice"><h2>$<span>749</span></h2></div>
                   <div class="slideRating">
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-solid fa-star"></i>
@@ -131,17 +131,17 @@
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-regular fa-star"></i>
                   </div>
-                  <div class="slideText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, beatae!</div>
+                  <div class="slideText">A WooCommerce product gallery slider for slider revolution with mind-blowing visuals</div>
                </div>
                <div class="buyNowActionBtn">
-                  <button class="buyNowBtn">BUY NOW</button>
+                  <button class="buyNowBtn" onclick="addToCart(0)">BUY NOW</button>
                </div>
          
             </div>
 
             <div class="slideDescription slide2Description">
                <div class="description">
-                  <div class="slidePrice"><h2>$849</h2></div>
+                  <div class="slidePrice"><h2>$<span>949</span></h2></div>
                   <div class="slideRating">
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-solid fa-star"></i>
@@ -149,17 +149,17 @@
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-regular fa-star"></i>
                   </div>
-                  <div class="slideText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, beatae!</div>
+                  <div class="slideText">Your next Product gallery slider <br> for WooCommerce</div>
                </div>
                <div class="buyNowActionBtn">
-                  <button class="buyNowBtn">BUY NOW</button>
+                  <button class="buyNowBtn" onclick="addToCart(1)">BUY NOW</button>
                </div>
          
             </div>
 
             <div class="slideDescription slide3Description">
                <div class="description">
-                  <div class="slidePrice"><h2>$949</h2></div>
+                  <div class="slidePrice"><h2>$<span>849</span></h2></div>
                   <div class="slideRating">
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-solid fa-star"></i>
@@ -167,17 +167,17 @@
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-regular fa-star"></i>
                   </div>
-                  <div class="slideText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, beatae!</div>
+                  <div class="slideText">A WooCommerce featured products slider that ticks all the boxes</div>
                </div>
                <div class="buyNowActionBtn">
-                  <button class="buyNowBtn">BUY NOW</button>
+                  <button class="buyNowBtn" onclick="addToCart(2)">BUY NOW</button>
                </div>
          
             </div>
 
             <div class="slideDescription slide4Description">
                <div class="description">
-                  <div class="slidePrice"><h2>$749</h2></div>
+                  <div class="slidePrice"><h2>$<span>649</span></h2></div>
                   <div class="slideRating">
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-solid fa-star"></i>
@@ -185,16 +185,54 @@
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-regular fa-star"></i>
                   </div>
-                  <div class="slideText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, beatae!</div>
+                  <div class="slideText">Tired of the same old , boring WooCommerce sliders? get this next level WooCommerce gallery now!</div>
                </div>
                <div class="buyNowActionBtn">
-                  <button class="buyNowBtn">BUY NOW</button>
+                  <button class="buyNowBtn" onclick="addToCart(3)">BUY NOW</button>
                </div>
          
             </div>
          </div>
          </div>
 </div>
+   </div>
+   <div class="cart">
+        <!-- <p class="emptyCart">
+         your cart is Empty, try adding a product
+        </p> -->
+
+        <div class="cartComponents">
+         
+         <!-- <div class="item">
+            <div class="itemPicture">
+               <img src="images/shoe1.png" alt="">
+            </div>
+            <div class="itemDescription">
+               <div class="itemName">Lorem</div>
+               <div class="itemQuantity">Quantity: x<span class="quantity">2</span></div>
+               <div class="itemUnitPrice">price : $<span class="unitPrice">749</span></div>
+               <div class="itemTotalPrice">price : $<span class="totalPrice">1498</span></div>
+            </div>
+            
+         </div> -->
+         
+        
+        </div>
+        <div class="payment">
+         <div class="subtotal">
+            <p>subtotal:</p>
+            <p class="totalPrice">$<span>44</span></p>
+         </div>
+         <div class="tax">
+            <p>tax:</p>
+            <p class="taxPrice">$<span>44</span></p>
+         </div>
+         <div class="total">
+            <p>total + tax:</p>
+            <p class="totalTaxPrice">$<span>44</span></p>
+         </div>
+        </div>
+        <button class="completeOrder">continue to checkout</button>
    </div>
 </body>
 </html>
