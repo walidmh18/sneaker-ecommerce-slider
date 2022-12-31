@@ -2,10 +2,19 @@
 
 
 :root{
-    --slide1-bg: linear-gradient(45deg, #2a125b 0%, #59c2ea 100%);
-    --slide2-bg: linear-gradient(45deg, #0a0b0b 0%, #c367f1 100%);
-    --slide3-bg: linear-gradient(45deg, #120814 0%, #73255a 100%);
-    --slide4-bg: linear-gradient(45deg, #120814 0%, #a759ea 100%);
+    --fade1-color1: #2a125b;
+    --fade1-color2: #59c2ea;
+    --fade2-color1: #0a0b0b;
+    --fade2-color2: #c367f1;
+    --fade3-color1: #120814;
+    --fade3-color2: #73255a;
+    --fade4-color1: #120814;
+    --fade4-color2: #a759ea;
+
+    --slide1-bg: linear-gradient(45deg, var(--fade1-color1) 0%, var(--fade1-color2) 100%);
+    --slide2-bg: linear-gradient(45deg, var(--fade2-color1) 0%, var(--fade2-color2) 100%);
+    --slide3-bg: linear-gradient(45deg, var(--fade3-color1) 0%, var(--fade3-color2) 100%);
+    --slide4-bg: linear-gradient(45deg, var(--fade4-color1) 0%, var(--fade4-color2) 100%);
 
 
     --light-color: #dcdcdc;
@@ -68,10 +77,34 @@ header ul{
     z-index: 0;
     overflow: hidden;
 }
-.slide1{
-    background: var(--slide1-bg);
+.slide{
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* display: none; */
 }
+.slide1{
 
+}
+.slider{
+    /* background: linear-gradient(45deg, #2a125b 0%, #59c2ea 100%); ; */
+    transition: 0.3s ease-in-out;
+}
+.slideNameContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 1.5s cubic-bezier(.66,.25,.23,.99);
+    left: 100%;
+}
+.slideShoeImgContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition:1.5s cubic-bezier(.66,.25,.23,.99);
+    left: -100%;
+}
 .navigationPrevious{
     position: absolute;
     top: 50%;
@@ -108,6 +141,7 @@ header ul{
     /* transition: 1ms; */
     display: grid;
     place-items: center;
+    /* transition: 0.1s ease-out; */
 }
 
  .navigationNext p{
@@ -119,15 +153,15 @@ header ul{
 
 .navigationBtn{
     transition: 0.1s ease;
-cursor: none;
-overflow: hidden;
-padding: 3rem;
+    cursor: none;
+    overflow: hidden;
+    padding: 3rem;
 }
 
 
-.slide{
+/* .slide{
     position: relative;
-}
+} */
 .slideName{
     position: absolute;
     top: 50%;
@@ -154,8 +188,9 @@ padding: 3rem;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 6;
-    width: 25%;
+    width: 30%;
     animation: bounce 5s ease-in-out infinite;
+    transition: 0.5s ease-out;
 }
 .slideShoeImgSHadow img{
     width: 100%;
@@ -240,4 +275,30 @@ padding: 3rem;
 
 .buyNowBtn:hover::after{
     width: 100%;
+}
+
+
+
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: 0.5s cubic-bezier(.66,.25,.23,.99);
+}
+
+.bg1{
+    background: var(--slide1-bg);
+}
+
+.bg2{
+    background: var(--slide2-bg);
+}
+
+.bg3{
+    background: var(--slide3-bg);
+}
+
+.bg4{
+    background: var(--slide4-bg);
 }
