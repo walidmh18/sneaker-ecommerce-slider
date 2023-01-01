@@ -329,7 +329,7 @@ header a:hover{
     background: #12081418;
     right: -25vw;
     top: 0;
-    padding: 8rem 5rem;
+    padding: 8rem 3rem;
     transition: 0.3s;
     z-index: 11;
 }
@@ -342,7 +342,9 @@ header a:hover{
     gap: 1rem;
     height: 80%;
     overflow-y: scroll;
-    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 .cartComponents::-webkit-scrollbar{
     width: 6px;

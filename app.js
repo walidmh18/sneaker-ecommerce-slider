@@ -238,30 +238,42 @@ function addToCart(index) {
    console.log(document.querySelector(`.slide${index+1}Description`).querySelector('.slidePrice').querySelector('span').innerText);
    let itemPrice = document.querySelector(`.slide${index+1}Description`).querySelector('.slidePrice').querySelector('span').innerText
    let itemName = [...slidesArr[index].querySelectorAll('.slideName')][0].innerText
-   let newItem = document.createElement('div')
-   newItem.classList.add('item')
-   newItem.innerHTML = `
-   <div class="itemPicture">
-               <img src="images/shoe${index+1}.png" alt="">
-            </div>
-            <div class="itemDescription">
-               <div class="itemName">${itemName}</div>
-               <div class="itemQuantity">Quantity: x<span class="quantity">1</span></div>
-               <div class="itemUnitPrice">price : $<span class="unitPrice">${itemPrice}</span></div>
-                
-            </div>
-   
-   `
+
+
+   if (document.querySelector(`#${itemName}Order`) == null) {
+      let newItem = document.createElement('div')
+      newItem.classList.add('item')
+      newItem.id = `${itemName}Order`
+      newItem.innerHTML = `
+      <div class="itemPicture">
+                  <img src="images/shoe${index+1}.png" alt="">
+               </div>
+               <div class="itemDescription">
+                  <div class="itemName">${itemName}</div>
+                  <div class="itemQuantity">Quantity: x<span class="quantity">1</span></div>
+                  <div class="itemUnitPrice">unit price : $<span class="unitPrice">${itemPrice}</span></div>
+                  <div class="itemTotalPrice">total price : $<span class="totalPrice">${itemPrice}</span></div>
+               </div>
+      
+      `
+      cartComponents.append(newItem)
+      
+   } else{
+      console.log('aaaaah');
+      document.querySelector(`#${itemName}Order`).querySelector('.quantity').innerText ++
+      let itemQuantity = document.querySelector(`#${itemName}Order`).querySelector('.quantity').innerText
+      document.querySelector(`#${itemName}Order`).querySelector('.totalPrice').innerText = (itemPrice * itemQuantity)
+
+   }
    prices.push(1*(itemPrice))
-   cartComponents.append(newItem)
    let totalPrice = prices.reduce((a, b) => a + b, 0)
-   let taxPrice = Math.round(totalPrice*0.15*100)/100 
+   let taxPrice = Math.round(totalPrice*0.05*100)/100 
    let totalTaxPrice = totalPrice + taxPrice
    totalPriceContainer.innerText = totalPrice
    taxPriceContainer.innerText = taxPrice
    totalTaxPriceContainer.innerText = totalTaxPrice
    let itemsArr = [...document.querySelectorAll('.item')]
-   cartOpenBtn.querySelector('span').innerText = itemsArr.length
+   cartOpenBtn.querySelector('span').innerText = prices.length
 }
 const cart = document.querySelector('.cart')
 function openCart() {
@@ -278,7 +290,6 @@ addEventListener('click',(e) => {
       console.log('object');
    }
 })
-
 
 
 
