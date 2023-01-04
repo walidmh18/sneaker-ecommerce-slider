@@ -181,6 +181,19 @@ function previousSlide() {
    disActivatedSlideName.style.left = '-100%'
    disActivatedSlideShoe.style.left = '100%'
    changeDescription(activeSlideIndex)
+
+   let timeout1 = setTimeout(() => {
+      disActivatedSlideName.style.transition = 'none'
+      disActivatedSlideShoe.style.transition = 'none'
+      disActivatedSlideName.style.left = '100%'
+      disActivatedSlideShoe.style.left = '-100%'
+      setTimeout(() => {
+         disActivatedSlideShoe.style.transition = '1.5s cubic-bezier(.66,.25,.23,.99)'
+         disActivatedSlideName.style.transition = '1.5s cubic-bezier(.66,.25,.23,.99)'
+         
+      }, 200);
+
+   }, 1500);
    
 }
 
